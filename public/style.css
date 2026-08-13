@@ -1,6 +1,6 @@
 :root{
   --bg:#0c0d12;--surface:#151820;--surface-2:#1c202a;--text:#f7f5ef;--muted:#a6acb7;
-  --line:rgba(255,255,255,.09);--accent:#f0ca72;--violet:#afa3ff;--mint:#80d8b1;
+  --line:rgba(255,255,255,.09);--accent:#f0ca72;--violet:#F527A3;--mint:#FF924F;
   --danger:#ff9999;--shadow:0 28px 75px rgba(0,0,0,.28)
 }
 *{box-sizing:border-box}html{scroll-behavior:smooth}
