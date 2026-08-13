@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca colaborativa de resúmenes para estudiar y compartir conocimiento.">
+  <title>Resumenoteca · Comparte lo que aprendiste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow--one"></div>
+  <div class="glow glow--two"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <span class="brand__mark">R</span>
+        <span>Resumenoteca</span>
+      </a>
+      <div class="nav__links">
+        <button class="nav-link" data-scroll="library">Explorar</button>
+        <button class="nav-link nav-link--accent" data-scroll="publish">＋ Publicar resumen</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero__copy">
+        <span class="eyebrow">APRENDE · COMPARTE · DESCUBRE</span>
+        <h1>Un lugar para compartir<br><em>lo que aprendiste.</em></h1>
+        <p>Una biblioteca colaborativa donde cualquier persona puede enviar sus propios resúmenes y encontrar material creado por otros estudiantes y docentes.</p>
+        <div class="hero__actions">
+          <button class="primary-btn" data-scroll="library">Explorar resúmenes</button>
+          <button class="secondary-btn" data-scroll="publish">Subir uno</button>
+        </div>
+      </div>
+      <div class="hero__cards" aria-hidden="true">
+        <article class="float-card float-card--1"><span>Matemática</span><strong>Funciones</strong><small>Resumen de estudio</small></article>
+        <article class="float-card float-card--2"><span>Historia</span><strong>Revolución Industrial</strong><small>Ideas principales</small></article>
+        <article class="float-card float-card--3"><span>Ciencias</span><strong>Fotosíntesis</strong><small>Conceptos clave</small></article>
+      </div>
+    </section>
+
+    <section id="library" class="library container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">BIBLIOTECA</span>
+          <h2>Encuentra un resumen</h2>
+        </div>
+        <p id="libraryStatus">Cargando biblioteca…</p>
+      </div>
+
+      <div class="search-panel card">
+        <div class="search-main">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Busca por tema, título o contenido…">
+          <button id="searchBtn" class="primary-btn">Buscar</button>
+        </div>
+        <div class="filters">
+          <select id="subjectFilter">
+            <option>Todas</option><option>Matemática</option><option>Lengua y Literatura</option>
+            <option>Historia</option><option>Ciencias</option><option>Inglés</option><option>Filosofía</option>
+            <option>Tecnología</option><option>Artes</option><option>Educación Ciudadana</option><option>Otra</option>
+          </select>
+          <select id="levelFilter">
+            <option>Todos</option><option>Educación Básica</option><option>Educación Media</option>
+            <option>Universidad</option><option>General</option>
+          </select>
+          <select id="sortFilter">
+            <option value="newest">Más recientes</option><option value="oldest">Más antiguos</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="summaryGrid" class="summary-grid"></div>
+
+      <div id="emptyState" class="empty-state hidden">
+        <div>📚</div>
+        <h3>No encontramos resúmenes</h3>
+        <p>Prueba con otro término o conviértete en la primera persona en compartir material sobre ese tema.</p>
+      </div>
+    </section>
+
+    <section id="publish" class="publish-section">
+      <div class="container publish-grid">
+        <div class="publish-copy">
+          <span class="eyebrow">COMPARTE CON OTROS</span>
+          <h2>Publica tu resumen</h2>
+          <p>Escribe o pega tu material. No necesitas crear una cuenta: puedes usar un alias o publicar como anónimo.</p>
+          <div class="rules-card">
+            <strong>Antes de enviar</strong>
+            <ul>
+              <li>Comparte material escrito por ti o que tengas permiso para compartir.</li>
+              <li>No incluyas nombres completos, teléfonos, direcciones ni otros datos personales.</li>
+              <li>Evita copiar capítulos, guías o textos protegidos completos.</li>
+              <li>Los envíos pasan por revisión antes de aparecer públicamente.</li>
+            </ul>
+          </div>
+        </div>
+
+        <form id="publishForm" class="publish-form card">
+          <div class="field">
+            <label for="titleInput">Título *</label>
+            <input id="titleInput" maxlength="120" required placeholder="Ej: Razones trigonométricas — conceptos esenciales">
+          </div>
+
+          <div class="two-cols">
+            <div class="field">
+              <label for="subjectInput">Asignatura *</label>
+              <select id="subjectInput" required>
+                <option value="">Selecciona</option><option>Matemática</option><option>Lengua y Literatura</option>
+                <option>Historia</option><option>Ciencias</option><option>Inglés</option><option>Filosofía</option>
+                <option>Tecnología</option><option>Artes</option><option>Educación Ciudadana</option><option>Otra</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="levelInput">Nivel *</label>
+              <select id="levelInput" required>
+                <option value="">Selecciona</option><option>Educación Básica</option><option>Educación Media</option>
+                <option>Universidad</option><option>General</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="two-cols">
+            <div class="field">
+              <label for="topicInput">Tema</label>
+              <input id="topicInput" maxlength="100" placeholder="Ej: Trigonometría">
+            </div>
+            <div class="field">
+              <label for="aliasInput">Tu alias</label>
+              <input id="aliasInput" maxlength="40" placeholder="Anónimo">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <label for="contentInput">Resumen *</label>
+              <label class="file-import">Importar .txt/.md
+                <input id="textFileInput" type="file" accept=".txt,.md,text/plain,text/markdown">
+              </label>
+            </div>
+            <textarea id="contentInput" maxlength="12000" required placeholder="Escribe o pega aquí tu resumen…"></textarea>
+            <div class="counter"><span id="charCount">0</span> / 12.000 caracteres</div>
+          </div>
+
+          <div class="field">
+            <label for="sourcesInput">Fuentes o referencias <small>(opcional)</small></label>
+            <textarea id="sourcesInput" class="textarea-small" maxlength="1200" placeholder="Ej: Apuntes de clase; libro X, capítulo 3; sitio institucional…"></textarea>
+          </div>
+
+          <label class="accept-row">
+            <input id="rulesInput" type="checkbox" required>
+            <span>Confirmo que puedo compartir este material y que no contiene datos personales.</span>
+          </label>
+
+          <button class="primary-btn primary-btn--wide" type="submit">Enviar a revisión</button>
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <strong>Resumenoteca</strong>
+    <p>Los resúmenes son aportes de la comunidad. Contrasta la información con tus fuentes de estudio.</p>
+    <a href="/admin.html">Administración</a>
+  </footer>
+
+  <dialog id="summaryDialog" class="summary-dialog">
+    <div class="dialog-inner">
+      <button id="dialogClose" class="dialog-close">×</button>
+      <div id="dialogContent"></div>
+    </div>
+  </dialog>
+
+  <dialog id="reportDialog" class="report-dialog">
+    <form id="reportForm" class="report-form">
+      <button type="button" id="reportClose" class="dialog-close">×</button>
+      <span class="eyebrow">REPORTAR</span>
+      <h2>¿Qué problema encontraste?</h2>
+      <textarea id="reportReason" maxlength="300" required placeholder="Explica brevemente el motivo…"></textarea>
+      <button class="primary-btn primary-btn--wide" type="submit">Enviar reporte</button>
+      <div id="reportFeedback" class="form-feedback"></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

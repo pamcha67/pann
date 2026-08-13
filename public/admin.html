@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumenoteca · Administración</title>
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <header class="header"><div class="container nav">
+    <a class="brand" href="/"><span class="brand__mark">R</span><span>Resumenoteca</span></a>
+    <a class="nav-link" href="/">← Volver al sitio</a>
+  </div></header>
+  <main class="container admin-main">
+    <section class="admin-login card">
+      <span class="eyebrow">ADMINISTRACIÓN</span><h1>Revisión de publicaciones</h1>
+      <p>La clave se conserva solo durante esta sesión del navegador.</p>
+      <div class="admin-key-row"><input id="adminKey" type="password" placeholder="ADMIN_KEY"><button id="connectBtn" class="primary-btn">Entrar</button></div>
+      <div id="adminFeedback" class="form-feedback"></div>
+    </section>
+    <section id="adminWorkspace" class="admin-workspace hidden">
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="pending">Pendientes <span id="pendingCount">0</span></button>
+        <button class="admin-tab" data-tab="reported">Reportados <span id="reportedCount">0</span></button>
+      </div>
+      <div id="pendingPanel"><div id="pendingList" class="admin-list"></div></div>
+      <div id="reportedPanel" class="hidden"><div id="reportedList" class="admin-list"></div></div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

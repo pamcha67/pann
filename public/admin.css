@@ -1,0 +1,9 @@
+.admin-main{padding:55px 0 80px}.admin-login{padding:25px;max-width:720px;margin:0 auto 32px}
+.admin-login h1{font-family:Georgia,serif;font-size:2.6rem;font-weight:500;margin:8px 0}.admin-login p{color:var(--muted);font-size:.82rem}
+.admin-key-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:18px}.admin-key-row input{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:11px;padding:11px 12px;outline:0}
+.admin-workspace{max-width:900px;margin:0 auto}.admin-tabs{display:flex;gap:8px;margin-bottom:14px}.admin-tab{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:11px;padding:10px 13px;font-weight:800}
+.admin-tab.active{background:var(--accent);color:#211b0d}.admin-list{display:flex;flex-direction:column;gap:10px}.review-card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:20px}
+.review-card h2{font-family:Georgia,serif;font-weight:500;margin:7px 0;font-size:1.55rem}.review-meta{color:var(--muted);font-size:.72rem}.review-content{white-space:pre-wrap;color:#d8dbe2;line-height:1.65;font-size:.83rem;margin:17px 0;max-height:300px;overflow:auto}
+.review-sources{color:var(--muted);font-size:.75rem;border-top:1px solid var(--line);padding-top:12px}.review-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+.approve-btn,.reject-btn,.remove-btn{border-radius:10px;padding:9px 12px;font-weight:800;font-size:.75rem}.approve-btn{border:0;background:var(--mint);color:#102319}.reject-btn,.remove-btn{border:1px solid var(--line);background:var(--surface-2);color:var(--text)}
+.report-reasons{margin-top:12px;color:var(--danger);font-size:.78rem}@media(max-width:600px){.admin-key-row{grid-template-columns:1fr}.admin-login h1{font-size:2rem}}
